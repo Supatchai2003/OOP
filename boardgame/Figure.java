@@ -2,8 +2,8 @@ package boardgame;
 public abstract class Figure {
     protected String name;
     protected boolean color;
-    protected int x;
-    protected int y;
+    protected int x; // row
+    protected int y; // col
     
 
     public Figure(String name, boolean color, int x, int y) {

@@ -6,6 +6,7 @@ public class Bishop extends Figure {
     }
 
     @Override
+
     public boolean freeMove(ChessBoard board, int destX, int destY) {
         // ตรวจสอบว่าตำแหน่งปลายทางอยู่ในเส้นทแยงมุมของ Bishop หรือไม่
         // หากอยู่ในเส้นทแยงมุม และไม่มี Figure อื่นบนเส้นทาง ให้ return true
@@ -15,7 +16,9 @@ public class Bishop extends Figure {
             int stepY = (destY - y) > 0 ? 1 : -1;
             int currentX = x + stepX;
             int currentY = y + stepY;
-
+            if (Math.abs(destX - x) == Math.abs(destY - y)) {
+                return true;
+            } 
             while (currentX != destX && currentY != destY) {
                 if (board.getFigure(currentX, currentY) != null) {
                     return false;
@@ -24,9 +27,10 @@ public class Bishop extends Figure {
                 currentY += stepY;
             }
             return true;
-        }
+    }
         return false;
     }
+    
     @Override
     public boolean getColor(){
         return color;
