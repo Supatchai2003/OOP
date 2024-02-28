@@ -1,31 +1,33 @@
 package boardgame;
+
 public class ChessBoard {
-     public static int size = 8;
-    public Figure[][]board = new Figure[size][size];
+    public static int size = 8;
+    public Figure[][] board = new Figure[size][size];
     char[] letters = { '1', '2', '3', '4', '5', '6', '7', '8' };
 
     public ChessBoard() {
         setBoard();
     }
+
     public void moveFigure(String name, int destX, int destY) {
         Figure figure = getFigure(name);
         if (figure == null) {
             System.out.println("Figure not found");
             return;
         }
-        
+    
         Figure destFigure = board[destX - 1][destY - 1];
         if (destFigure != null && destFigure.getColor() == figure.getColor()) {
             System.out.println("Cannot move to position: Same color piece already exists");
             return;
         }
-        
+    
         if (figure.freeMove(this, destX, destY)) {
             if (destFigure != null) {
                 System.out.println("Move and capture " + destFigure.getName());
                 board[destX - 1][destY - 1] = null; // ลบ Figure ที่ตำแหน่งปลายทาง
             }
-            
+    
             board[figure.x - 1][figure.y - 1] = null;
             figure.x = destX;
             figure.y = destY;
@@ -33,10 +35,8 @@ public class ChessBoard {
         } else {
             System.out.println("Cannot move to position");
         }
-    }
-    
-    
-    public void displayBoard () {
+    } 
+    public void displayBoard() {
         System.out.print("  ");
         for (int i = 0; i < size; i++) {
             System.out.print("    ");
@@ -67,13 +67,15 @@ public class ChessBoard {
     }
 
     // New method to set a figure on the board
-    public void setBoard(){
-        board[0][1]=new Bishop("Bsw1", true, 1, 2);
-        board[0][6]=new Bishop("Bsw2", true, 1, 7);
-        board[7][1]=new Bishop("Bsb1", false, 8, 2);
-        board[7][6]=new Bishop("Bsb2", false, 8, 7);
-        
+    public void setBoard() {
+        board[0][1] = new Bishop("Bsw1", true, 1, 2);
+        board[0][6] = new Bishop("Bsw2", true, 1, 7);
+        board[7][1] = new Bishop("Bsb1", false, 8, 2);
+        board[7][6] = new Bishop("Bsb2", false, 8, 7);
+        board[0][0] = new Rook("Row1", true, 1, 1);
+
     }
+
     public Figure getFigure(String name) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
@@ -84,6 +86,6 @@ public class ChessBoard {
         }
         return null;
     }
+    
 
-    }
-
+}
