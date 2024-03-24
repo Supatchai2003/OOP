@@ -9,11 +9,11 @@ public class Main {
     chessBoard.displayBoard();
     chessBoard.moveFigure("Paw3", 4, 3);
     chessBoard.displayBoard();
-    chessBoard.moveFigure("Pab1", 5, 3);
+    chessBoard.moveFigure("Pab3", 5, 3);
     chessBoard.displayBoard();
     chessBoard.moveFigure("Paw3", 5, 3);
     chessBoard.displayBoard();
-    chessBoard.moveFigure("Pab1",4, 2);
+    chessBoard.moveFigure("Pab3",4, 4);
     chessBoard.displayBoard();
   }
 }

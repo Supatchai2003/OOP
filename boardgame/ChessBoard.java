@@ -80,8 +80,15 @@ public class ChessBoard {
         board[1][5] = new Pawn("Paw6", true, 2, 6);
         board[1][6] = new Pawn("Paw7", true, 2, 7);
         board[1][7] = new Pawn("Paw8", true, 2, 8);
-        board[6][2] = new Pawn("Pab1", false, 7, 3);
-
+        board[6][0] = new Pawn("Pab1", false, 7, 1);
+        board[6][1] = new Pawn("Pab2", false, 7, 2);
+        board[6][2] = new Pawn("Pab3", false, 7, 3);
+        board[6][3] = new Pawn("Pab4", false, 7, 4);
+        board[6][4] = new Pawn("Pab5", false, 7, 5);
+        board[6][5] = new Pawn("Pab6", false, 7, 6);
+        board[6][6] = new Pawn("Pab7", false, 7, 7);
+        board[6][7] = new Pawn("Pab8", false, 7, 8);
+        
     }
 
     public Figure getFigure(String name) {
