@@ -11,6 +11,6 @@ public class Knight extends Figure {
         int dy = Math.abs(destY - y);
 
         // A knight moves in an L-shape: 2 squares in one direction and 1 square in a perpendicular direction.
-        return (dx == 2 && dy == 1) || (dx == 1 && dy == 2);
+        return (dx == 2 && dy == 1) || (dx == 1 && dy == 2); 
     }
 }
